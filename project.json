@@ -1,0 +1,20 @@
+{
+  "overview": "Second is an AI chief of staff app for startup founders. It surfaces what actually matters — your daily briefing, the 3 decisions needing your attention, and protected focus time — in a single minimal dark-mode feed called the War Room.",
+  "features": [
+    "War Room briefing card with revenue pulse, top risks, calendar conflicts, and one uncomfortable question",
+    "Decision Inbox showing the 3 decisions that need you today, with AI-drafted auto-replies for everything else",
+    "Focus Mode with calendar blocking and mock auto-decline for low-leverage meetings",
+    "Delegate button on every item that drafts a Slack message to your team",
+    "Dark mode minimal design inspired by Superhuman and Linear",
+    "Mock data for Stripe, Slack, Gmail, and Google Calendar in v1"
+  ],
+  "category": "productivity",
+  "tags": [
+    "productivity",
+    "founder-tools",
+    "ai-assistant",
+    "dark-mode",
+    "startup"
+  ],
+  "last_updated": "2026-04-27T09:27:47.398Z"
+}

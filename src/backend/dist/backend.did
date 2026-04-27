@@ -1,0 +1,73 @@
+type WarRoomBriefing = 
+ record {
+   calendarConflicts: vec CalendarConflict;
+   revenuePulse: RevenuePulse;
+   topRisks: vec RiskItem;
+   uncomfortableQuestion: text;
+ };
+type RiskSeverity = 
+ variant {
+   high;
+   low;
+   medium;
+ };
+type RiskItem = 
+ record {
+   severity: RiskSeverity;
+   source: text;
+   "text": text;
+ };
+type RevenuePulse = 
+ record {
+   churnRate: float64;
+   mrr: nat;
+   mrrChange: int;
+   topCustomer: text;
+ };
+type MeetingToDecline = 
+ record {
+   attendees: vec text;
+   declineMessage: text;
+   time: text;
+   title: text;
+ };
+type FocusMode = 
+ record {
+   blockEnd: text;
+   blockStart: text;
+   enabled: bool;
+   meetingsToDecline: vec MeetingToDecline;
+   priority: text;
+ };
+type DecisionUrgency = 
+ variant {
+   high;
+   medium;
+ };
+type DecisionSource = 
+ variant {
+   gmail;
+   slack;
+ };
+type Decision = 
+ record {
+   draftReply: text;
+   id: nat;
+   sender: text;
+   senderAvatar: text;
+   snippet: text;
+   source: DecisionSource;
+   subject: text;
+   urgency: DecisionUrgency;
+ };
+type CalendarConflict = 
+ record {
+   participants: vec text;
+   time: text;
+   title: text;
+ };
+service : {
+  getBriefing: () -> (WarRoomBriefing) query;
+  getDecisions: () -> (vec Decision) query;
+  getFocusMode: () -> (FocusMode) query;
+}
